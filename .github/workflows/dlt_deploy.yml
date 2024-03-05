@@ -40,10 +40,10 @@ jobs:
         env:
             PIPELINE_ORIGIN_NAME: dlt_sample_pipeline
             PIPELINE_ORIGIN_SCHEMA: base_schema_name
-            BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+            BRANCH_ORIGIN_NAME: ${{ github.head_ref || github.ref_name }}
             BUNDLE_NAME: dlt_sample
         run: | 
-            BRANCH_NAME=`echo "$BRANCH_NAME" | sed -r 's/[/]+/_/g'`
+            BRANCH_NAME=`echo "$BRANCH_ORIGIN_NAME" | sed -r 's/[/]+/_/g'`
             sed -i -e s/${PIPELINE_ORIGIN_NAME}/${PIPELINE_ORIGIN_NAME}_${BRANCH_NAME}/g resources/dlt_sample_pipeline.yml
             sed -i -e s/${PIPELINE_ORIGIN_SCHEMA}/${PIPELINE_ORIGIN_SCHEMA}_${BRANCH_NAME}/g resources/dlt_sample_pipeline.yml
             sed -i -e s/${BUNDLE_NAME}/${BUNDLE_NAME}_${BRANCH_NAME}/g databricks.yml
