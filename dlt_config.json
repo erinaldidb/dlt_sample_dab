@@ -1,0 +1,40 @@
+{
+    "pipeline_id": "b4009acf-7a86-443e-a9d8-2ce406a77e89",
+    "pipeline_type": "WORKSPACE",
+    "clusters": [
+        {
+            "label": "default",
+            "autoscale": {
+                "min_workers": 1,
+                "max_workers": 1,
+                "mode": "ENHANCED"
+            }
+        }
+    ],
+    "development": true,
+    "continuous": true,
+    "channel": "PREVIEW",
+    "photon": false,
+    "libraries": [
+        {
+            "notebook": {
+                "path": "/Repos/Centene_CAT_POC/Centene/dlt_notebooks/DLT_1"
+            }
+        },
+        {
+            "notebook": {
+                "path": "/Repos/Centene_CAT_POC/Centene/dlt_notebooks/DLT_2"
+            }
+        },
+        {
+            "notebook": {
+                "path": "/Repos/Centene_CAT_POC/Centene/dlt_notebooks/DLT_3"
+            }
+        }
+    ],
+    "name": "DLT_SAMPLE",
+    "edition": "ADVANCED",
+    "catalog": "ema_rina",
+    "target": "dlt_sample",
+    "data_sampling": false
+}

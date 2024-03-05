@@ -1,0 +1,12 @@
+# The main pipeline for dlt_sample
+resources:
+  pipelines:
+    dlt_sample_pipeline:
+      name: dlt_sample_pipeline
+      target: dlt_sample_${bundle.environment}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: /Workspace/${workspace.file_path}/src
