@@ -3,10 +3,15 @@ resources:
   pipelines:
     dlt_sample_pipeline:
       name: dlt_sample_pipeline
+      catalog: "ema_rina"
       target: dlt_sample_${bundle.environment}
       libraries:
         - notebook:
-            path: ../src/dlt_pipeline.ipynb
+            path: ../src/dlt_sample/DLT_1.py
+        - notebook:
+            path: ../src/dlt_sample/DLT_2.sql
+        - notebook:
+            path: ../src/dlt_sample/DLT_3.sql
 
       configuration:
         bundle.sourcePath: /Workspace/${workspace.file_path}/src

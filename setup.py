@@ -9,11 +9,9 @@ from setuptools import setup, find_packages
 import sys
 sys.path.append('./src')
 
-import dlt_sample
-
 setup(
     name="dlt_sample",
-    version=dlt_sample.__version__,
+    version="1.0.0",
     url="https://databricks.com",
     author="emanuele.rinaldi@databricks.com",
     description="my test wheel",
