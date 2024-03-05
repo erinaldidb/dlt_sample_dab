@@ -18,15 +18,7 @@ resources:
           notebook_task:
             notebook_path: ../src/notebook.ipynb
         
-        - task_key: refresh_pipeline
-          depends_on:
-            - task_key: notebook_task
-          pipeline_task:
-            pipeline_id: ${resources.pipelines.dlt_sample_pipeline.id}
-        
         - task_key: main_task
-          depends_on:
-            - task_key: refresh_pipeline
           job_cluster_key: job_cluster
           python_wheel_task:
             package_name: dlt_sample
