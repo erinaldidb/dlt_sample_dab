@@ -1,4 +1,10 @@
 # The main pipeline for dlt_sample
+variables:
+  BRANCH_NAME:
+    description: The current branch of the deployment
+    lookup:
+      cluster: ${{ github.head_ref || github.ref_name }} 
+
 resources:
   pipelines:
     dlt_sample_pipeline:
