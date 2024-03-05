@@ -2,9 +2,9 @@
 resources:
   pipelines:
     dlt_sample_pipeline:
-      name: dlt_sample_pipeline
+      name: dlt_sample_pipeline [PR_${{ github.event.number }}]
       catalog: "ema_rina"
-      target: dlt_sample_${bundle.environment}
+      target: dlt_sample_pr_${{ github.event.number }}
       libraries:
         - notebook:
             path: ../src/dlt_sample/DLT_1.py
