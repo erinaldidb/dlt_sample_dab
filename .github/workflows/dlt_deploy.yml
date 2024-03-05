@@ -16,8 +16,8 @@ on:
           type: choice
           required: true
           options:
-            - sandbox
             - dev
+            - sandbox
 
 jobs:
   # Used by the "pipeline_update" job to deploy the bundle.
@@ -42,4 +42,3 @@ jobs:
         env:
           DATABRICKS_TOKEN: ${{ secrets.DB_TOKEN }}
           DATABRICKS_BUNDLE_ENV: dev
-          BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 

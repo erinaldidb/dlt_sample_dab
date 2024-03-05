@@ -1,10 +1,13 @@
 # The main pipeline for dlt_sample
+variables:
+    BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
+
 resources:
   pipelines:
     dlt_sample_pipeline:
-      name: dlt_sample_pipeline [${BRANCH_NAME}]
+      name: dlt_sample_pipeline [${var.BRANCH_NAME}]
       catalog: "ema_rina"
-      target: dlt_sample_pr_${BRANCH_NAME}
+      target: dlt_sample_pr_${var.BRANCH_NAME}
       libraries:
         - notebook:
             path: ../src/dlt_sample/DLT_1.py
