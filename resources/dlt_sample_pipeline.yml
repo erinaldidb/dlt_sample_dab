@@ -1,16 +1,10 @@
 # The main pipeline for dlt_sample
-variables:
-  BRANCH_NAME:
-    description: The current branch of the deployment
-    lookup:
-      cluster: ${{ github.head_ref || github.ref_name }} 
-
 resources:
   pipelines:
     dlt_sample_pipeline:
-      name: dlt_sample_pipeline [${var.BRANCH_NAME}]
+      name: dlt_sample_pipeline [${bundle.git.branch}]
       catalog: "ema_rina"
-      target: dlt_sample_pr_${var.BRANCH_NAME}
+      target: dlt_sample_pr_${bundle.git.branch}
       libraries:
         - notebook:
             path: ../src/dlt_sample/DLT_1.py
