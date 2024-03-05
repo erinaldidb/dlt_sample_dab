@@ -2,7 +2,7 @@
 resources:
   pipelines:
     dlt_sample_pipeline:
-      name: dlt_sample_pipeline [PR_${var.BRANCH_NAME}]
+      name: dlt_sample_pipeline [${var.BRANCH_NAME}]
       catalog: "ema_rina"
       target: dlt_sample_pr_${var.BRANCH_NAME}
       libraries:
